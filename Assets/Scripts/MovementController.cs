@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class MovementController
 {
+
     [SerializeField] private float _walkSpeed = 4f;
     [SerializeField] private float _runSpeed = 8f;
     [SerializeField] private float _airControlMultiplier = 0.5f;
@@ -24,7 +25,6 @@ public class MovementController
         _playerController = playerController;
         _head = Camera.main.transform;
     }
-
     public void Move(bool isGrounded)
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -61,7 +61,7 @@ public class MovementController
         while (true)
         {
             float stepInterval = _speed == _runSpeed ? _stepInterval * _walkSpeed / _runSpeed : _stepInterval;
-            _impulseSource.GenerateImpulse(_speed == _runSpeed ? 1.3f : 1);
+            _impulseSource.GenerateImpulse(_speed == _runSpeed ? 1.1f : 1);
 
             float defaultVelocity = 0.15f;
             _impulseSource.m_DefaultVelocity.y = _speed == _runSpeed ? defaultVelocity * _walkSpeed / _runSpeed : defaultVelocity;

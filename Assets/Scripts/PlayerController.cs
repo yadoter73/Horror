@@ -10,12 +10,13 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
 
     public Coroutine StepCoroutine;
-
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _movementController.Initialize(_characterController, this);
         _crouchController.Initialize(_characterController);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
