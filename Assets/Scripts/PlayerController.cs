@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _velocity;
     private bool _isGrounded;
 
+
     public Coroutine StepCoroutine;
     private void Start()
     {
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
         _crouchController.Initialize(_characterController);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     private void Update()
