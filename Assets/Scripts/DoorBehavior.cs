@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Interactable
 {
+    [SerializeField] private int _id;
     public Animator animator;
     public bool IsOpen;
     void Start()
@@ -22,17 +23,19 @@ public class Door : MonoBehaviour, Interactable
         }
         return "Press E to open the door";
     }
-    public void Interact()
+    public void Interact(int id)
     {
-        //IsOpen = !IsOpen
-        IsOpen = !IsOpen;
-        if (IsOpen)
+        if _id == id || _id == -1)
         {
-            animator.SetBool("IsOpen", true);
-        }
-        else
-        {
-            animator.SetBool("IsOpen", false);
+            IsOpen = !IsOpen;
+            if (IsOpen)
+            {
+                animator.SetBool("IsOpen", true);
+            }
+            else
+            {
+                animator.SetBool("IsOpen", false);
+            }
         }
 
     }

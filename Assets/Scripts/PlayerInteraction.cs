@@ -13,9 +13,9 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        InteractionRay();     
+        InteractionRay();
     }
-    void InteractionRay()
+    public void InteractionRay()
     {
         Ray ray = MainCam.ViewportPointToRay(Vector3.one / 2f);
         RaycastHit hit;
