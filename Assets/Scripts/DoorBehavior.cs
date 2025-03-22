@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Interactable
 {
+    
     [SerializeField] private int _id;
     public Animator animator;
     public bool IsOpen;
@@ -25,7 +26,7 @@ public class Door : MonoBehaviour, Interactable
     }
     public void Interact(int id)
     {
-        if _id == id || _id == -1)
+        if (_id == id || _id == -1)
         {
             IsOpen = !IsOpen;
             if (IsOpen)
