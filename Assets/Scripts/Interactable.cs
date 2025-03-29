@@ -6,4 +6,5 @@ public interface Interactable
 {
     void Interact(int id = -1);
     string GetDescription();
+    
 }

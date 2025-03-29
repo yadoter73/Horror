@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
   Index: 0
-  _emptyImage: {fileID: 0}
+  _emptyImage: {fileID: 21300000, guid: 7ad6133f27e485a40927bcd082b6a07e, type: 3}
   _dragClone: {fileID: 0}
   _parentCanvas: {fileID: 0}
 --- !u!114 &8396305257456177020
@@ -106,6 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1

@@ -10,7 +10,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public GameObject interactionUI;
     public TextMeshProUGUI interactionText;
-
+    public TMP_Text stateText;
     void Update()
     {
         InteractionRay();
@@ -30,6 +30,14 @@ public class PlayerInteraction : MonoBehaviour
             {
                 hitSMTH = true;
                 interactionText.text = interactable.GetDescription();
+                if (interactable is DoorBehaviour DoorState)
+                {
+                    stateText.text = DoorState.GetState();
+                }
+                else
+                {
+                    stateText.text = "";
+                }
                 if (Input.GetButtonDown("UseItem"))
                 {
                     interactable.Interact();
@@ -38,6 +46,7 @@ public class PlayerInteraction : MonoBehaviour
 
         }
         interactionUI.SetActive(hitSMTH);
+        stateText.gameObject.SetActive(hitSMTH);
         return interactable;
     }
 }

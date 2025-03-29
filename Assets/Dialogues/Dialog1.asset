@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b519d371b297d41b757c8e7eb3c754, type: 3}
+  m_Name: Dialog1
+  m_EditorClassIdentifier: 
+  text: "\u041D\u0435\u0433\u0440"
+  answers:
+  - "\u0440\u043E\u043C\u0430"
+  - "\u0440\u043E\u043C\u04302"
+  speakerName: "\u0414\u0435\u0432\u043E\u0447\u043A\u0430 \u041D\u0435\u0433\u0440"
+  nextNodes:
+  - {fileID: 11400000, guid: 97aa71c168b0c0440a0d5e0304bd8aa7, type: 2}
+  - {fileID: 11400000, guid: c492e8a0ff34e6b4d812c502f519d66d, type: 2}

@@ -45,6 +45,12 @@ public class DoorBehaviour : MonoBehaviour, Interactable
         if (id == _id)
             locked = !locked;
     }
+    public string GetState()
+    {
+        return locked ? "<color=red>Door's locked</color>  " :
+            "<color=green>Door's opened</color>";
+            
+    }
 
 
 
