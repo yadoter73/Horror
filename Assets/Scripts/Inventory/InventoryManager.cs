@@ -1,21 +1,24 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
 
     [SerializeField] private Transform _itemHolder;
-    [SerializeField] private Transform _mainInventoryUI;
 
     private QuickSlotInventory _quickSlotInventory;
+    
 
     public QuickSlotInventory QuickSlotInventory => _quickSlotInventory;
+
 
     private void Awake()
     {
         _quickSlotInventory = GetComponentInChildren<QuickSlotInventory>();
+ 
         _quickSlotInventory.Initialize();
+
     }
     public void PickupItem()
     {
@@ -30,13 +33,18 @@ public class InventoryManager : MonoBehaviour
                     item.PickupItem(_itemHolder);
             }
         }
-
+        
     }
 
     public void DropItem()
     {
+       
         Item item = _quickSlotInventory.Items[_quickSlotInventory.CurrentSlotIndex];
-        if (_quickSlotInventory.RemoveItem())
+        Rigidbody rigidbody = item.GetComponent<Rigidbody>();
+        if ( _quickSlotInventory.RemoveItem())
+        {
             item.DropItem();
+            rigidbody.AddForce(Camera.main.transform.forward * 100);
+        }
     }
 }

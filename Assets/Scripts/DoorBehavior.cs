@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, Interactable
+public class DoorBehaviour : MonoBehaviour, Interactable
 {
-    
+    [SerializeField] private bool locked;
     [SerializeField] private int _id;
     public Animator animator;
     public bool IsOpen;
@@ -20,24 +20,33 @@ public class Door : MonoBehaviour, Interactable
     {
         if (IsOpen)
         {
-            return "Press E to close the door";
+            return "Press F to close the door";
         }
-        return "Press E to open the door";
+        return "Press F to open the door";
     }
     public void Interact(int id)
     {
-        if (_id == id || _id == -1)
+        if (locked)
         {
-            IsOpen = !IsOpen;
-            if (IsOpen)
-            {
-                animator.SetBool("IsOpen", true);
-            }
-            else
-            {
-                animator.SetBool("IsOpen", false);
-            }
+            return;
         }
-
+        IsOpen = !IsOpen;
+        if (IsOpen)
+        {
+            animator.SetBool("IsOpen", true);
+        }
+        else
+        {
+            animator.SetBool("IsOpen", false);
+        }
     }
+    public void ToggleLock(int id)
+    {
+        if (id == _id)
+            locked = !locked;
+    }
+
+
+
+
 }

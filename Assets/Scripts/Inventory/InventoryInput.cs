@@ -22,11 +22,6 @@ public class InventoryInput : MonoBehaviour
             _inventoryManager.DropItem();
         }
 
-        if (Input.GetButtonDown("ToggleInventory"))
-        {
-            _inventoryManager.ToggleInventory();
-        }
-
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
