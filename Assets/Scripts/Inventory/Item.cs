@@ -6,6 +6,8 @@ public abstract class Item : MonoBehaviour
 {
     public string Name;
 
+    private int Layer = 3;
+
     public Sprite ImageSprite;
 
     private Rigidbody _rb;
@@ -36,6 +38,16 @@ public abstract class Item : MonoBehaviour
         _rb.isKinematic = false;
         _collider.enabled = true;
         transform.parent = null;
+        gameObject.layer = 0;
+        Transform[] popa = gameObject.GetComponentsInChildren<Transform>();
+
+        foreach (Transform pop in popa)
+        {
+            pop.gameObject.layer = 0;
+        }
+
+        transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+
     }
     public void PickupItem(Transform parent = null)
     {
@@ -47,6 +59,14 @@ public abstract class Item : MonoBehaviour
         transform.localScale = Vector3.one;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        gameObject.layer = Layer;
+        Transform[] popa = gameObject.GetComponentsInChildren<Transform>();
+
+        foreach(Transform pop in popa)
+        {
+            pop.gameObject.layer = Layer;
+        }
+
 
     }
 
