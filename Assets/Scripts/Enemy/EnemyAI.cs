@@ -60,7 +60,7 @@ public class EnemyAI : MonoBehaviour
         _currentState?.UpdateState();
 
         _agent.speed = _isAttacking ? 0 : _agentSpeed;
-        Debug.Log(_currentState.ToString());
+       
     }
 
     public void SwitchState(EnemyState newState)
